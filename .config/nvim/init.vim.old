@@ -4,7 +4,7 @@
 " will be overwritten everytime an upgrade of the vim packages is performed.
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
-
+lua require 'init'
 runtime! debian.vim
 
 " Vim will load $VIMRUNTIME/defaults.vim if the user does not have a vimrc.
@@ -37,15 +37,14 @@ set background=dark
 " according to the detected filetype.
 filetype plugin indent on
 call plug#begin('~/.local/share/nvim/site/pack')
-
 " Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 Plug 'git://github.com/tommcdo/vim-lion.git'
 Plug 'https://github.com/prettier/vim-prettier'
-" Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'https://github.com/kyazdani42/nvim-tree.lua.git'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
